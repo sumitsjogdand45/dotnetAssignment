@@ -1,9 +1,15 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\Assignment1\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\dotnetAssignment\\Assignment1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C56D5AB0-24FA-40F0-8549-211929F1B5E5}|Assignment1\\Assignment1.csproj|c:\\users\\user\\source\\repos\\assignment1\\assignment1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DBF2BC1E-FD2C-44F6-9055-8BA96CC6AF4E}|..\\..\\SecondDay\\Demo_Operators\\Demo_Operators.csproj|c:\\users\\user\\source\\repos\\secondday\\demo_operators\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907B2092-F4A5-4A32-94CA-9B7028308110}|..\\..\\SecondDay\\DemoArray\\DemoArray.csproj|c:\\users\\user\\source\\repos\\secondday\\demoarray\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C56D5AB0-24FA-40F0-8549-211929F1B5E5}|Assignment1\\Assignment1.csproj|c:\\users\\user\\source\\repos\\dotnetassignment\\assignment1\\assignment1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C56D5AB0-24FA-40F0-8549-211929F1B5E5}|Assignment1\\Assignment1.csproj|solutionrelative:assignment1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,17 +20,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\SecondDay\\DemoArray\\Program.cs",
+              "RelativeDocumentMoniker": "..\\..\\SecondDay\\DemoArray\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\SecondDay\\DemoArray\\Program.cs",
+              "RelativeToolTip": "..\\..\\SecondDay\\DemoArray\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T12:58:49.147Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Assignment1\\Assignment1\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\SecondDay\\Demo_Operators\\Program.cs",
+              "RelativeDocumentMoniker": "..\\..\\SecondDay\\Demo_Operators\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\SecondDay\\Demo_Operators\\Program.cs",
+              "RelativeToolTip": "..\\..\\SecondDay\\Demo_Operators\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T12:58:09.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\dotnetAssignment\\Assignment1\\Assignment1\\Program.cs",
               "RelativeDocumentMoniker": "Assignment1\\Program.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Assignment1\\Assignment1\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\dotnetAssignment\\Assignment1\\Assignment1\\Program.cs",
               "RelativeToolTip": "Assignment1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAzczMzMwmwEQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T04:43:37.224Z",
               "EditorCaption": ""

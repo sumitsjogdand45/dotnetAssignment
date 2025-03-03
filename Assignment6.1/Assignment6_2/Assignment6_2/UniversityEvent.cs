@@ -21,6 +21,7 @@ namespace Assignment6_2
             {
                 Console.WriteLine($"Student {studentId} is already registered for {workshopName}.");
             }
+
         }
         public void PrintRegisteredStudents(string workshopName)
         {

@@ -16,8 +16,8 @@ namespace Assignment4._1.Model
 
         public virtual void displayDetails()
         {
-            Console.WriteLine($"Name of the Employee{Name}");
-            Console.WriteLine($"salary of the Employee{Salary}");
+            Console.WriteLine($"Name of the Employee {Name}");
+            Console.WriteLine($"salary of the Employee {Salary}");
 
         }
 

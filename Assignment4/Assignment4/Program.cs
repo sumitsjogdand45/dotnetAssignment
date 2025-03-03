@@ -11,8 +11,6 @@
         static void Main(string[] args)
         {
             Program pgm=new Program();
-            Console.WriteLine(user);
-
             Program p3 =new Program();
             Program p2 =new Program();
             Console.WriteLine(user);

@@ -1,4 +1,4 @@
-﻿namespace Assignment5._2
+﻿namespace Assignment6_2
 {
     internal class Program
     {
@@ -6,19 +6,16 @@
         {
             UniversityEvent eventSystem = new UniversityEvent();
 
-            // Register students for workshops
+            
             eventSystem.RegisterStudent("C# Programming", 101);
             eventSystem.RegisterStudent("C# Programming", 102);
-            eventSystem.RegisterStudent("C# Programming", 101); // Duplicate registration attempt
-
+            eventSystem.RegisterStudent("C# Programming", 101);  
             eventSystem.RegisterStudent("Web Development", 103);
             eventSystem.RegisterStudent("Web Development", 104);
 
-            // Print out registered students for each workshop
+            
             eventSystem.PrintRegisteredStudents("C# Programming");
             eventSystem.PrintRegisteredStudents("Web Development");
         }
     }
 }
-    
-

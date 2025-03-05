@@ -22,7 +22,7 @@ namespace PolicyManagementSystem
                 Console.WriteLine("6.View Active Policies");
                 Console.WriteLine("7.Exit");
                 Console.WriteLine();
-                Console.WriteLine("Enter your Choice:");
+                Console.WriteLine("Please Enter your Choice:");
 
 
                 int option = int.Parse(Console.ReadLine());

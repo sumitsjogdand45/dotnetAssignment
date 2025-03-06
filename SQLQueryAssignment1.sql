@@ -95,3 +95,104 @@ create table Customers (
 	alter column Price  DECIMAL(10, 2);
 
 	select * from Orders;
+	select * from Customers;
+
+	Insert into Customers 
+	values(6,'Bhavesh Joshi','Bhavesh@gmail.com',894857543);
+
+	Delete from Customers
+	where CustomerID not in(select CustomerID from Orders);
+
+	--Operators
+	--1. Retrieve all books with a price greater than 2000. 
+	select * from Books
+	where price>20;
+
+	
+	--2. Find the total number of books available. 
+	select count(*) 
+	from books
+
+	--3. Find books published between 2015 and 2023. 
+	select * from Books
+	where PublishedYear between '01-Jan-2004' and '31-dec-2010'
+
+	--4.Find all customers who have placed at least one order. 
+	select * from Customers
+	where CustomerID in(select CustomerID From Orders);
+
+	--5. Retrieve books where the title contains the word "SQL"
+		Select * from Books
+		where Title Like 'SQL%'
+		
+	--6.Find the most expensive book in the store.
+		select max(Price)
+		from Books;
+
+	--7.. Retrieve customers whose name starts with "A" or "J". 
+		select * from customers
+		where Names Like 'A%' or Names like 'V%';
+
+	--8. Calculate the total revenue from all orders
+		select Sum(TotalAmount) from Orders
+		
+select * from OrderItems
+select * from Books
+--Joins
+
+--1. Retrieve all book titles along with their respective author names. 
+	select b.Title,a.Names 
+	from Books b
+	left join Authors a
+	on b.AuthorID=a.AuthorID  
+	
+--2. List all customers and their orders (if any). 
+	select  c.*,b.OrderID
+	from Customers c
+	left join Orders b
+	on c.CustomerID=b.CustomerID;
+
+
+	insert into Books 
+	values(6,'Wings of Fire',5,300,'2005-02-02') 
+
+--3.Find all books that have never been ordered.
+	select b.*
+	from Books b
+	left join OrderItems c
+	on b.BookID=c.BookID
+	where c.BookID is null;
+
+--4. Retrieve the total number of orders placed by each customer.
+	select a.CustomerID, b.Names,count(*) as ordercount
+	from Orders a
+	right join Customers b
+	on a.CustomerID=b.CustomerID
+	group By a.CustomerID,b.Names
+
+--5. Find the books ordered along with the quantity for each order.
+		select b.*,a.Quantity
+		from OrderItems a
+		left join Books b
+		on a.BookID=b.BookID
+
+--6. Display all customers, even those who haven’t placed any orders.
+
+	insert into Customers 
+	values(6,'sumit jogdand','sumit@gmail.com',985473223)
+ 
+	select a.*
+	from Customers a
+	left join Orders b
+	on a.CustomerID=b.CustomerID
+	where b.OrderID is null;
+
+--7. Find authors who have not written any books 
+select * from Authors
+insert into Authors values(6,'kapil lund','USA') 
+
+select a.*
+from Authors a
+left join Books b
+on a.AuthorID=b.AuthorID
+where BookID is null;

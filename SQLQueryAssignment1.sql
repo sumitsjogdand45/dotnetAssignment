@@ -1,10 +1,16 @@
 create database BookStoreDB;
+use BookStoreDB
+--create procedure GetAllBooks
+--as
+--begin
+--select * from Books
+--end;
 
 --authors table
 CREATE TABLE Authors (
     AuthorID INT PRIMARY KEY,
     Names VARCHAR(255) NOT NULL,
-    Country VARCHAR(255) NOT NULL); 
+    Country VARCHAR(255) NOT NULL);
 
 --books table
 create table Books(
@@ -188,11 +194,63 @@ select * from Books
 	where b.OrderID is null;
 
 --7. Find authors who have not written any books 
-select * from Authors
-insert into Authors values(6,'kapil lund','USA') 
+	select * from Authors
+	insert into Authors values(6,'kapil lund','USA') 
 
-select a.*
-from Authors a
-left join Books b
-on a.AuthorID=b.AuthorID
-where BookID is null;
+	select a.*
+	from Authors a
+	left join Books b
+	on a.AuthorID=b.AuthorID
+	where BookID is null;
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+
+--SUBQUERIES--
+
+select* from Orders
+select * from Customers
+select * from OrderItems
+select * from Books
+
+
+--1. Find the customer(s) who placed the first order (earliest OrderDate). 
+	--select OrderId,CustomerID
+	--from Orders 
+	--where OrderDate=(select min(OrderDate)
+	--				 from Orders)
+
+	select*
+	from Customers
+	where CustomerId =
+	(select top 1 CustomerID
+	from Orders 
+	order by OrderDate asc)
+	
+	 update Orders
+	 set OrderDate='2024-01-20'
+	 where CustomerID=4;
+
+--2. Find the customer(s) who placed the most orders. 
+
+	select *
+	from Customers c
+	where c.CustomerID=(select max(quantity)
+					    from OrderItems)
+
+--3. Find customers who have not placed any orders 
+
+	select *
+	from Customers
+	where CustomerID not in(select CustomerID from Orders)
+	 
+--4. Retrieve all books cheaper than the most expensive book written by( any  author based on your data)
+	
+	select * 
+	from Books
+	where price<(select max(price)
+	from Books)
+
+--5. List all customers whose total spending is greater than the average spending of all customers 
+	
+	 

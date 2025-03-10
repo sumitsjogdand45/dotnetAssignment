@@ -1,10 +1,10 @@
 create database BookStoreDB;
 use BookStoreDB
---create procedure GetAllBooks
---as
---begin
---select * from Books
---end;
+create procedure GetAllBooks
+as
+begin
+select * from Books
+end;
 
 --authors table
 CREATE TABLE Authors (
@@ -253,4 +253,68 @@ select * from Books
 
 --5. List all customers whose total spending is greater than the average spending of all customers 
 	
-	 
+	select * from Customers where CustomerID in
+	(Select CustomerID from Orders
+	group by CustomerID
+	having sum(TotalAmount)>(select avg(TotalAmount)
+							from Orders))
+
+ 
+ ----------------------------------------------------------------------------
+ -----------------------Stored Procedures------------------------------------
+ 
+ --1. Write a stored procedure that accepts a CustomerID and returns all orders placed by that customer
+ create Procedure SP1_CustomerID
+ @CustomerID int
+ as
+ begin
+ select * from Orders 
+ where CustomerID=@CustomerID
+ end
+
+ exec SP1_CustomerID 5
+
+ --2. Create a procedure that accepts MinPrice and MaxPrice as parameters and returns all books within that range 
+	
+	create Procedure SP_Range
+	@MaxPrice decimal (20,2),
+	@MinPrice decimal (20,2)
+	as
+	begin
+	select * from Books where Price between @MinPrice and @MinPrice
+	end
+	
+	exec SP_Range 900,1000
+
+
+
+	
+ ----------------------------------------------------------------------------
+ ----------------------------------Views------------------------------------
+ 
+
+ --1.Create a view named AvailableBooks that shows only books that are in 
+--stock, including BookID, Title, AuthorID, Price, and PublishedYear
+
+alter table Books
+add Stock int
+
+ update Books set Stock=5 where BookID=1
+  update Books set Stock=7 where BookID=2
+   update Books set Stock=3 where BookID=3
+  update Books set Stock=6 where BookID=4
+  update Books set Stock=4 where BookID=5
+  update Books set Stock=9 where BookID=6
+  update Books set Stock=0 where BookID=10
+  update Books set Stock=1 where BookID=11
+  update Books set Stock=0 where BookID=12
+
+
+  create view AvailableBooks
+  as
+  select BookID,Title,AuthorID,Price,PublishedYear
+  from Books
+  where Stock >0
+
+  select * from AvailableBooks
+  

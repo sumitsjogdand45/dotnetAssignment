@@ -68,9 +68,8 @@ namespace PolicyManagementSystem.Repository
                 {
                     if (!policies.Any(p => p.PolicyID == id))
                     {
-                        throw new PolicyNotFoundException("Incorrect Policy ID !!!");
                         Console.WriteLine("That policy ID must be from parallel universe.Try again with real one!");
-                        Console.WriteLine();
+                        throw new PolicyNotFoundException("Incorrect Policy ID !!!");                         
                     }
                     if (reader.Read())
                     {
@@ -101,10 +100,8 @@ namespace PolicyManagementSystem.Repository
                 {
                     Console.WriteLine(item);
                 }   
-            }
-               
+            }               
         }
-
         public List<Policy> ViewAllPolicy()
         {
             List<Policy> policies = new List<Policy>();
@@ -126,17 +123,8 @@ namespace PolicyManagementSystem.Repository
                     policies.Add(policy);
                 }
                 return policies;
-            }
-            
-
-            //if (policies.Count == 0)
-            //{
-            //    Console.WriteLine("Uh-Oh! Looks like you're policy free.No Policies found");
-            //    return;
-            //}
-            //policies.ForEach(p => Console.WriteLine(p));
+            }           
         }
-
        public int UpdatePolicy(int id)
         {
             List<Policy> policyList = ViewAllPolicy();
@@ -198,14 +186,12 @@ namespace PolicyManagementSystem.Repository
                                 break;
 
                             case 4:
-                                return cmd.ExecuteNonQuery();
-                                
+                                return cmd.ExecuteNonQuery();                               
 
                             default:
                                 Console.WriteLine("Invalid Choice");
                                 break;
-                        }
-                        
+                        }        
 
                     }
                 }
@@ -214,7 +200,6 @@ namespace PolicyManagementSystem.Repository
                     Console.WriteLine("Invalid Policy ID");
                     return 0;
                 }
-
             }
         }
     }

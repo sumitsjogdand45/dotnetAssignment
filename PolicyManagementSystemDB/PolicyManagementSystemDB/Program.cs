@@ -58,35 +58,19 @@ namespace PolicyManagementSystemDB
                             break;
 
                         case 2:
-                            // Console.Write("Enter Policy ID: ");
-                            // int updateId = int.Parse(Console.ReadLine());
-
-                            // Console.Write("Enter New Policy Holder Name: ");
-                            // string newName = Console.ReadLine();
-
-                            // Console.Write("Enter New Policy Type: ");
-                            // PolicyType newType = (PolicyType)Enum.Parse(typeof(PolicyType), Console.ReadLine(), true);
-
-                            //// Console.Write("Enter Start Date: ");
-                            //// DateTime newStart = DateTime.Parse(Console.ReadLine());
-
-                            // Console.Write("Enter End Date: ");
-                            // DateTime newEnd = DateTime.Parse(Console.ReadLine());
+                           
                             Console.WriteLine("Enter Policy ID: ");
                             if(!int.TryParse(Console.ReadLine(),out int updateId))
                             {
                                 Console.WriteLine("Invalid Policy ID !!!! Please try again");
                                 break;
                             }
-
                             repository.UpdatePolicy(updateId );
-
                             break;
 
                         case 3:
                             Console.Write("Enter Policy ID to Delete: ");
                             int deleteId = int.Parse(Console.ReadLine());
-
                             repository.DeletePolicy(deleteId);
                             break;
 
@@ -94,7 +78,6 @@ namespace PolicyManagementSystemDB
                         case 4:
                             Console.WriteLine("Enter Policy ID: ");
                             int searchId = int.Parse(Console.ReadLine());
-
                             repository.SearchPolicyById(searchId);
                             break;
 

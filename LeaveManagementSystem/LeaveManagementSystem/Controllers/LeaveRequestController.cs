@@ -92,17 +92,18 @@ namespace LeaveManagementSystem.Controllers
         //DeleteLeaveRequest 
 
         [HttpGet]
-        public async Task<IActionResult> DeleteLeaveRequest(int requestId)
+        public async Task<IActionResult> DeleteLeaveRequest(int id)
         {
-            var del = await _leaveRequestService.GetLeaveRequestById(requestId);
-            return View(del);
+            var lr = await _leaveRequestService.GetLeaveRequestById(id);
+            return View(lr);
         }
 
         [HttpPost]
-        public async Task<IActionResult> DeleteLeaveRequest(LeaveRequest leaverequest)
+        public async Task<IActionResult> DeleteLeaveRequest(LeaveRequest leaveRequest)
         {
-            var del2 = await _leaveRequestService.DeleteLeaveRequest(leaverequest.Id);
+            var del = await _leaveRequestService.DeleteLeaveRequest(leaveRequest.Id);
             return RedirectToAction("AddLeaveRequest");
+             
         }
 
 

@@ -49,7 +49,7 @@ namespace LeaveManagementSystem.Repository
         public async Task<int> DeleteLeaveRequest(int requestId)
         {
             var deleteleave = await GetLeaveRequestById(requestId);
-            await _leaveDbcontext.LeaveRequests.Remove(deleteleave);
+            _leaveDbcontext.LeaveRequests.Remove(deleteleave);
             return await _leaveDbcontext.SaveChangesAsync();
         }
 

@@ -3,7 +3,7 @@ using LeaveManagementSystem.Repository;
 
 namespace LeaveManagementSystem.Services
 {
-    public class LeaveApprovalService:ILeaveApprovalService
+    public class LeaveApprovalService : ILeaveApprovalService
     {
         readonly ILeaveApprovalRepository _leaveApprovalRepository;
 
@@ -24,18 +24,18 @@ namespace LeaveManagementSystem.Services
         }
 
         /*--------------------------getleavebyid---------------------------------------*/
-        
+
 
         public async Task<LeaveApproval> GetLeaveApprovalById(int approvalId)
         {
-           
-            return await _leaveApprovalRepository.GetLeaveApprovalById(approvalId);            
+
+            return await _leaveApprovalRepository.GetLeaveApprovalById(approvalId);
 
         }
 
         /*---------------------------getleavebymgrid--------------------------------------*/
 
-        public async Task<LeaveApproval> GetApprovalsByManagerId(int managerId)
+        public async Task<LeaveApproval> GetApprovalsByManagerId(string managerId)
         {
             return await _leaveApprovalRepository.GetApprovalsByManagerId(managerId);
         }

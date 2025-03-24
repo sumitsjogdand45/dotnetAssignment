@@ -4,9 +4,9 @@ using LeaveManagementSystem.Services;
 
 namespace LeaveManagementSystem.Service
 {
-    public class LeaveRequestService:ILeaveRequestService    
+    public class LeaveRequestService : ILeaveRequestService
     {
-        readonly  ILeaveRequestRepository _leaveRequestRepository;
+        readonly ILeaveRequestRepository _leaveRequestRepository;
         public LeaveRequestService(ILeaveRequestRepository leaveRequestRepository)
         {
             _leaveRequestRepository = leaveRequestRepository;
@@ -35,16 +35,16 @@ namespace LeaveManagementSystem.Service
 
         //GetLeaveRequestByUserId    
 
-        public async Task<LeaveRequest> GetLeaveRequestsByUserId(int requestId)
+        public async Task<LeaveRequest> GetLeaveRequestsByUserId(string requestId)
         {
             return await _leaveRequestRepository.GetLeaveRequestsByUserId(requestId);
         }
 
         //DeleteLeaveRequest
 
-        public async Task <int> DeleteLeaveRequest(int requestId)
+        public async Task<int> DeleteLeaveRequest(int requestId)
         {
-           return await _leaveRequestRepository.DeleteLeaveRequest(requestId);
+            return await _leaveRequestRepository.DeleteLeaveRequest(requestId);
         }
 
     }

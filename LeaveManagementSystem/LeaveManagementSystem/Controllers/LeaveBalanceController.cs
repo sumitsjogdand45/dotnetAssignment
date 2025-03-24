@@ -18,7 +18,7 @@ namespace LeaveManagementSystem.Controllers
         //GetLeaveBalanceByUserId
 
         [HttpGet]
-        public async Task<IActionResult>GetLeaveBalanceByUserId(int id)
+        public async Task<IActionResult> GetLeaveBalanceByUserId(string id)
         {
             var balance = await _leaveBS.GetLeaveBalanceByUserId(id);
             return View(balance);
@@ -28,13 +28,13 @@ namespace LeaveManagementSystem.Controllers
         //UpdateLeaveBalance
 
         [HttpGet]
-        public async Task<IActionResult> UpdateLeaveBalance(int id ) 
+        public async Task<IActionResult> UpdateLeaveBalance(string id)
         {
             var result = await _leaveBS.GetLeaveBalanceByUserId(id);
             return View(result);
         }
 
-        [HttpPost] 
+        [HttpPost]
         public async Task<IActionResult> UpdateLeaveBalance(LeaveBalance leaveBalance)
         {
             await _leaveBS.UpdateLeaveBalance(leaveBalance);

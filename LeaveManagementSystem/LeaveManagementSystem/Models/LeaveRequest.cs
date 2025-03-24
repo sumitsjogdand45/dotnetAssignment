@@ -6,9 +6,9 @@ namespace LeaveManagementSystem.Models
 {
     public class LeaveRequest
     {
-        [Key]
-        public int LeaveRequestId { get; set; }
-      
+        [Key ,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
 
         public string LeaveType { get; set; }
         [Required]
@@ -22,9 +22,9 @@ namespace LeaveManagementSystem.Models
 
         // Navigation Properties
 
-        public int LeaveRequestUserId { get; set; }
-        [ForeignKey("LeaveRequestUserId")]
-       
+        public string UserId { get; set; }
+        [ForeignKey("UserId")]
+
         public User User { get; set; }
 
         public LeaveApproval Approval { get; set; }

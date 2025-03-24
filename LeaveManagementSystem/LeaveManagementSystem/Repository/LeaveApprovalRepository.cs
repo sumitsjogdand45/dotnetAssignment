@@ -20,23 +20,23 @@ namespace LeaveManagementSystem.Repository
         //addleave
         public async Task<int> AddLeaveApproval(LeaveApproval approval)
         {
-             await _leaveDbcontext.LeaveApprovals.AddAsync(approval);
+            await _leaveDbcontext.LeaveApprovals.AddAsync(approval);
             return await _leaveDbcontext.SaveChangesAsync();
 
         }
         //getapprovalbyid
         public async Task<LeaveApproval> GetLeaveApprovalById(int approvalId)
         {
-            return await _leaveDbcontext.LeaveApprovals.FirstOrDefaultAsync(e=>e.ApprovalId==approvalId);
+            return await _leaveDbcontext.LeaveApprovals.FirstOrDefaultAsync(e => e.Id == approvalId);
         }
 
         //getapprovalbymgrid
-        public async Task<LeaveApproval> GetApprovalsByManagerId(int managerId)
+        public async Task<LeaveApproval> GetApprovalsByManagerId(string managerId)
         {
-            return await _leaveDbcontext.LeaveApprovals.FirstOrDefaultAsync(c=> c.ManagerId == managerId);
+            return await _leaveDbcontext.LeaveApprovals.FirstOrDefaultAsync(c => c.ManagerId == managerId);
         }
 
-         
+
 
         //
     }

@@ -4,12 +4,12 @@ namespace LeaveManagementSystem.Repository
 {
     public interface ILeaveApprovalRepository
     {
-        Task<IEnumerable<LeaveApproval>>GetAllLeaves();
+        Task<IEnumerable<LeaveApproval>> GetAllLeaves();
         Task<int> AddLeaveApproval(LeaveApproval approval);
 
         Task<LeaveApproval> GetLeaveApprovalById(int approvalId);
 
-        Task<LeaveApproval>GetApprovalsByManagerId(int managerId);
+        Task<LeaveApproval> GetApprovalsByManagerId(string managerId);
 
     }
 }

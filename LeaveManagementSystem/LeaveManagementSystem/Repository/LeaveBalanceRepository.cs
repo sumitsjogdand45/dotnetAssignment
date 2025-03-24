@@ -14,9 +14,9 @@ namespace LeaveManagementSystem.Repository
         }
 
         //GetLeaveBalanceByUserId
-        public async Task<LeaveBalance> GetLeaveBalanceByUserId(int userId)
+        public async Task<LeaveBalance> GetLeaveBalanceByUserId(string userId)
         {
-            return await _leaveDbcontext.LeaveBalances.FirstOrDefaultAsync(s=>s.UserId==userId);
+            return await _leaveDbcontext.LeaveBalances.FirstOrDefaultAsync(s => s.UserId == userId);
         }
 
 
@@ -25,12 +25,12 @@ namespace LeaveManagementSystem.Repository
         public async Task<int> UpdateLeaveBalance(LeaveBalance leaveBalance)
         {
             var leaves = await GetLeaveBalanceByUserId(leaveBalance.UserId);
-            if (leaves!=null)
+            if (leaves != null)
             {
                 leaves.BalanceId = leaveBalance.BalanceId;
-                leaves.UserId= leaveBalance.UserId;
-                leaves.TotalLeaveDays= leaveBalance.TotalLeaveDays;
-                leaves.RemainingLeaveDays=leaveBalance.RemainingLeaveDays;
+                leaves.UserId = leaveBalance.UserId;
+                leaves.TotalLeaveDays = leaveBalance.TotalLeaveDays;
+                leaves.RemainingLeaveDays = leaveBalance.RemainingLeaveDays;
                 leaves.LastUpdated = leaveBalance.LastUpdated;
                 leaves.Employee = leaveBalance.Employee;
                 return await _leaveDbcontext.SaveChangesAsync();

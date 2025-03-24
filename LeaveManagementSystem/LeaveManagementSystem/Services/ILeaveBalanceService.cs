@@ -4,7 +4,7 @@ namespace LeaveManagementSystem.Services
 {
     public interface ILeaveBalanceService
     {
-        Task<LeaveBalance> GetLeaveBalanceByUserId(int userId);
+        Task<LeaveBalance> GetLeaveBalanceByUserId(string userId);
 
         Task<int> UpdateLeaveBalance(LeaveBalance leaveBalance);
 

@@ -4,7 +4,7 @@
 
 namespace LeaveManagementSystem.Migrations
 {
-    public partial class @new : Migration
+    public partial class two : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

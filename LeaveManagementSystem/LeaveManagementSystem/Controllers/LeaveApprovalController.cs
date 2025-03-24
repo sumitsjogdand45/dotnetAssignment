@@ -34,7 +34,7 @@ namespace LeaveManagementSystem.Controllers
             if (ModelState.IsValid)
             {
                 int result = await _leaveApprovalService.AddLeaveApproval(approval);
-                if (result>0)
+                if (result > 0)
                 {
                     TempData["Message"] = "Leave Added successfully";
                 }
@@ -53,14 +53,14 @@ namespace LeaveManagementSystem.Controllers
         [HttpGet]
         public async Task<IActionResult> GetLeaveApprovalByID(int approvalId)
         {
-            var Approval =await _leaveApprovalService.GetLeaveApprovalById(approvalId);
+            var Approval = await _leaveApprovalService.GetLeaveApprovalById(approvalId);
             return View(Approval);
         }
-                 
+
         //---------GetLEAVEbymanagerid----------------------------------------------------------
 
 
-        public async Task<IActionResult> GetApprovalsByManagerId(int managerId)
+        public async Task<IActionResult> GetApprovalsByManagerId(string managerId)
         {
             var Approval = await _leaveApprovalService.GetApprovalsByManagerId(managerId);
             return View(Approval);

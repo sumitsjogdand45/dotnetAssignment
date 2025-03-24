@@ -7,7 +7,7 @@ namespace LeaveManagementSystem.Models
     {
         [Key]
         public int BalanceId { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public double TotalLeaveDays { get; set; }
         public double RemainingLeaveDays { get; set; }
         public DateTime LastUpdated { get; set; }

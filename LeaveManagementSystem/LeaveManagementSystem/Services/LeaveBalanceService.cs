@@ -13,7 +13,7 @@ namespace LeaveManagementSystem.Services
         }
 
         //GetLeaveBalanceByUserId
-        public async Task<LeaveBalance> GetLeaveBalanceByUserId(int userId)
+        public async Task<LeaveBalance> GetLeaveBalanceByUserId(string userId)
         {
             return await _leaveBR.GetLeaveBalanceByUserId(userId);
         }
@@ -22,7 +22,7 @@ namespace LeaveManagementSystem.Services
         //UpdateLeaveBalance
         public async Task<int> UpdateLeaveBalance(LeaveBalance leaveBalance)
         {
-             return await _leaveBR.UpdateLeaveBalance(leaveBalance);
+            return await _leaveBR.UpdateLeaveBalance(leaveBalance);
         }
     }
 }

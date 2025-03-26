@@ -2,7 +2,7 @@
 {
     public enum LeaveType
     {
-        Sick = 1, 
+        Sick, 
         Casual,
         Paid,
         Unpaid

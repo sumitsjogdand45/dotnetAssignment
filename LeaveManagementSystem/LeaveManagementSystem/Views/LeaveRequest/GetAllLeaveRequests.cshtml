@@ -61,8 +61,8 @@
                 @Html.DisplayFor(modelItem => item.User.Email)
             </td>
             <td>
-                <a asp-action=" " asp-route-id="@item.Id">Edit</a> |
-                    @* <a asp-action="Details" asp-route-id="@item.Id">Details</a> | *@
+                    <a asp-action="GetLeaveRequestByUserId" asp-route-id="@item.Id">Edit</a> |
+                    @* <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> | *@
                     <a asp-action="DeleteLeaveRequest" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>

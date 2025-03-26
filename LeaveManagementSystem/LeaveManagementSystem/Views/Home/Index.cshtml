@@ -1,4 +1,5 @@
-﻿@{
+﻿@model LeaveManagementSystem.Models.LeaveRequest
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -125,11 +126,11 @@
                 <p>Welcome back to the Leave Management System. Here, you can view and manage your leave requests, check the status of pending requests, and much more.</p>
             </div>
 
-            @* <div class="action-buttons"> *@
-            @*     <button class="action-btn" onclick="window.location.href='/leave-requests'">View Leave Requests</button> *@
-            @*     <button class="action-btn" onclick="window.location.href='/apply-leave'">Apply for Leave</button> *@
-            @*     <button class="action-btn" onclick="window.location.href='/leave-history'">Leave History</button> *@
-            @* </div> *@
+             <div class="action-buttons"> 
+                 <button class="action-btn" onclick="window.location.href='/leave-requests'">View Leave Balance</button> 
+                <button class="action-btn" onclick="window.location.href='/AddLeaveRequest'">Apply for Leave</button> 
+                 <button class="action-btn" onclick="window.location.href='/leave-history'">View Leave Approvals</button> 
+            </div> 
         </section>
 
         <footer class="footer">

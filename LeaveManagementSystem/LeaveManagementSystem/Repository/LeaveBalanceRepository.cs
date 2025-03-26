@@ -13,6 +13,11 @@ namespace LeaveManagementSystem.Repository
             _leaveDbcontext = leaveDbcontext;
         }
 
+        public async Task<LeaveBalance> GetLeaveBalanceByBalanceId(int balanceId)
+        {
+            return await _leaveDbcontext.LeaveBalances.FindAsync(balanceId);
+        }
+
         //GetLeaveBalanceByUserId
         public async Task<LeaveBalance> GetLeaveBalanceByUserId(string userId)
         {

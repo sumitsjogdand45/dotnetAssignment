@@ -1,17 +1,22 @@
-﻿using LeaveManagementSystem.Models;
+﻿using LeaveManagementSystem.Constants;
+using LeaveManagementSystem.Models;
 using LeaveManagementSystem.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LeaveManagementSystem.Controllers
 {
+    [Route("[controller]/[action]")]
     public class LeaveRequestController : Controller
     {
 
         readonly ILeaveRequestService _leaveRequestService;
+        readonly UserManager<User> _userManager;
 
-        public LeaveRequestController(ILeaveRequestService leaveRequestService)
+        public LeaveRequestController(ILeaveRequestService leaveRequestService, UserManager<User> userManager)
         {
             _leaveRequestService = leaveRequestService;
+            _userManager = userManager;
         }
 
 
@@ -25,7 +30,7 @@ namespace LeaveManagementSystem.Controllers
 
         //addleaverequest
 
-        [HttpGet]
+         [HttpGet]
         public async Task<IActionResult> AddLeaveRequest()
         {
             return View();
@@ -36,6 +41,7 @@ namespace LeaveManagementSystem.Controllers
         {
             ModelState.Remove("User");
             //ModelState.Remove("Approval");
+            var user = await _userManager.GetUserAsync(User);
             if (!ModelState.IsValid)
             {
                 var userId = HttpContext.Session.GetString("UserId");
@@ -47,7 +53,7 @@ namespace LeaveManagementSystem.Controllers
                     Status = leaveRequest.Status,
                     Reason = leaveRequest.Reason,
                     AppliedDate = leaveRequest.AppliedDate,
-                    UserId= userId
+                    UserId= user.Id
 
                 };
                
@@ -68,42 +74,47 @@ namespace LeaveManagementSystem.Controllers
         }
 
 
+
         //GetLeaveRequestById
 
-        [HttpGet("LeaveRequest/GetLeaveRequestById")]
+        [HttpGet("{requestId}")]
         public async Task<IActionResult> GetLeaveRequestById(int requestId)
         {
             var request = await _leaveRequestService.GetLeaveRequestById(requestId);
-            return View();
+            
+
+            return View(request);
         }
 
 
 
-        //GetLeaveRequestByUserId
 
-        [HttpGet]
-        public async Task<IActionResult> GetLeaveRequestByUserId(string requestId)
+        //GetLeaveRequestByUserId
+        [HttpGet("{requestId}")]
+        public async Task<IActionResult> GetLeaveRequestByUserId(int requestId)
         {
-            var request = await _leaveRequestService.GetLeaveRequestsByUserId(requestId);
-            return View();
+            var leaverequest = await _leaveRequestService.GetLeaveRequestById(requestId);
+            var request = await _leaveRequestService.GetLeaveRequestsByUserId(leaverequest.UserId);
+            return View(request);
         }
 
 
         //DeleteLeaveRequest 
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<IActionResult> DeleteLeaveRequest(int id)
         {
             var lr = await _leaveRequestService.GetLeaveRequestById(id);
             return View(lr);
         }
 
-        [HttpPost]
+
+        [HttpPost()]
         public async Task<IActionResult> DeleteLeaveRequest(LeaveRequest leaveRequest)
         {
             var del = await _leaveRequestService.DeleteLeaveRequest(leaveRequest.Id);
             return RedirectToAction("AddLeaveRequest");
-             
+
         }
 
 

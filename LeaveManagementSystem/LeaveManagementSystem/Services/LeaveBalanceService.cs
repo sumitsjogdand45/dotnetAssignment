@@ -12,6 +12,11 @@ namespace LeaveManagementSystem.Services
             _leaveBR = leaveBR;
         }
 
+        public async Task<LeaveBalance> GetLeaveBalanceByBalanceId(int balanceId)
+        {
+            return await _leaveBR.GetLeaveBalanceByBalanceId(balanceId);
+        }
+
         //GetLeaveBalanceByUserId
         public async Task<LeaveBalance> GetLeaveBalanceByUserId(string userId)
         {

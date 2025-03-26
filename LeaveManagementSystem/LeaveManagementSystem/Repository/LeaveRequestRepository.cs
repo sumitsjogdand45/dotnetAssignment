@@ -38,9 +38,9 @@ namespace LeaveManagementSystem.Repository
 
         //GetLeaveRequestsByUserId
 
-        public async Task<LeaveRequest> GetLeaveRequestsByUserId(string userId)
+        public async Task<IEnumerable<LeaveRequest>> GetLeaveRequestsByUserId(string userId)
         {
-            return await _leaveDbcontext.LeaveRequests.FirstOrDefaultAsync(d => d.UserId == userId);
+            return _leaveDbcontext.LeaveRequests.Where(u => u.UserId == userId);
         }
 
 
@@ -48,7 +48,7 @@ namespace LeaveManagementSystem.Repository
 
         public async Task<int> DeleteLeaveRequest(int requestId)
         {
-            var deleteleave = await GetLeaveRequestById(requestId);
+            var deleteleave = await GetLeaveRequestById(requestId);           
             _leaveDbcontext.LeaveRequests.Remove(deleteleave);
             return await _leaveDbcontext.SaveChangesAsync();
         }

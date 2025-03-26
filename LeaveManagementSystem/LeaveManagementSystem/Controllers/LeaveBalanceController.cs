@@ -14,13 +14,20 @@ namespace LeaveManagementSystem.Controllers
             _leaveBS = leaveBS;
         }
 
+        [HttpGet("{balanceId}")]
+        public async Task<IActionResult> GetLeaveBalanceByBalanceId(int balanceId)
+        {
+            var balanceUser = await _leaveBS.GetLeaveBalanceByBalanceId(balanceId);
+            return View(balanceUser);
+        }
 
         //GetLeaveBalanceByUserId
 
-        [HttpGet]
-        public async Task<IActionResult> GetLeaveBalanceByUserId(string id)
+        [HttpGet("{userId}")]
+        public async Task<IActionResult> GetLeaveBalanceByUserId(int userId)
         {
-            var balance = await _leaveBS.GetLeaveBalanceByUserId(id);
+            var balanceUser = await _leaveBS.GetLeaveBalanceByBalanceId(userId);
+            var balance = await _leaveBS.GetLeaveBalanceByUserId(balanceUser.UserId);
             return View(balance);
         }
 

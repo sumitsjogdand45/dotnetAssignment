@@ -9,7 +9,7 @@ namespace LeaveManagementSystem.Repository
         Task<int> AddLeaveRequest(LeaveRequest leaveRequest);
         Task<LeaveRequest> GetLeaveRequestById(int requestId);
 
-        Task<LeaveRequest> GetLeaveRequestsByUserId(string userId);
+        Task<IEnumerable<LeaveRequest>> GetLeaveRequestsByUserId(string userId);
 
         Task<int> DeleteLeaveRequest(int requestId);
     }

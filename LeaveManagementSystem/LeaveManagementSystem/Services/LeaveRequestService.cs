@@ -1,6 +1,7 @@
 ﻿using LeaveManagementSystem.Models;
 using LeaveManagementSystem.Repository;
 using LeaveManagementSystem.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LeaveManagementSystem.Service
 {
@@ -35,7 +36,7 @@ namespace LeaveManagementSystem.Service
 
         //GetLeaveRequestByUserId    
 
-        public async Task<LeaveRequest> GetLeaveRequestsByUserId(string requestId)
+        public async Task<IEnumerable<LeaveRequest>> GetLeaveRequestsByUserId(string requestId)
         {
             return await _leaveRequestRepository.GetLeaveRequestsByUserId(requestId);
         }

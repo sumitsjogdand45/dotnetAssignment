@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C37CB621-3FC8-439B-A16A-3FC0E3616CE3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{66126C86-AFF1-4CA1-BC0F-D0E92D15D053}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{FA27594D-E70C-478B-A89A-027546406661}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{C866F018-1FB3-47B8-B802-8F179E51FE45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtSystem.Api", "src\API\ArtSystem.Api\ArtSystem.Api.csproj", "{A7445DC6-4AF3-4F25-8282-102297FBE4EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtSystem.Application", "src\Core\ArtSystem.Application\ArtSystem.Application.csproj", "{0609961E-855C-4E75-B982-5AFB4998D90E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtSystem.Domain", "src\Core\ArtSystem.Domain\ArtSystem.Domain.csproj", "{0E4DD84E-7080-462C-93DB-652F718FD3E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtSystem.Identity", "src\Infrastructure\ArtSystem.Identity\ArtSystem.Identity.csproj", "{EC1DF93C-66C3-4974-9007-7440A3BDB0F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtSystem.Persistance", "src\Infrastructure\ArtSystem.Persistance\ArtSystem.Persistance.csproj", "{95DFB501-471C-452B-8735-611FB38A3F2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7445DC6-4AF3-4F25-8282-102297FBE4EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7445DC6-4AF3-4F25-8282-102297FBE4EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7445DC6-4AF3-4F25-8282-102297FBE4EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7445DC6-4AF3-4F25-8282-102297FBE4EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0609961E-855C-4E75-B982-5AFB4998D90E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0609961E-855C-4E75-B982-5AFB4998D90E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0609961E-855C-4E75-B982-5AFB4998D90E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0609961E-855C-4E75-B982-5AFB4998D90E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E4DD84E-7080-462C-93DB-652F718FD3E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E4DD84E-7080-462C-93DB-652F718FD3E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E4DD84E-7080-462C-93DB-652F718FD3E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E4DD84E-7080-462C-93DB-652F718FD3E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC1DF93C-66C3-4974-9007-7440A3BDB0F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1DF93C-66C3-4974-9007-7440A3BDB0F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1DF93C-66C3-4974-9007-7440A3BDB0F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1DF93C-66C3-4974-9007-7440A3BDB0F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95DFB501-471C-452B-8735-611FB38A3F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95DFB501-471C-452B-8735-611FB38A3F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95DFB501-471C-452B-8735-611FB38A3F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95DFB501-471C-452B-8735-611FB38A3F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{66126C86-AFF1-4CA1-BC0F-D0E92D15D053} = {C37CB621-3FC8-439B-A16A-3FC0E3616CE3}
+		{FA27594D-E70C-478B-A89A-027546406661} = {C37CB621-3FC8-439B-A16A-3FC0E3616CE3}
+		{C866F018-1FB3-47B8-B802-8F179E51FE45} = {C37CB621-3FC8-439B-A16A-3FC0E3616CE3}
+		{A7445DC6-4AF3-4F25-8282-102297FBE4EF} = {66126C86-AFF1-4CA1-BC0F-D0E92D15D053}
+		{0609961E-855C-4E75-B982-5AFB4998D90E} = {FA27594D-E70C-478B-A89A-027546406661}
+		{0E4DD84E-7080-462C-93DB-652F718FD3E8} = {FA27594D-E70C-478B-A89A-027546406661}
+		{EC1DF93C-66C3-4974-9007-7440A3BDB0F4} = {C866F018-1FB3-47B8-B802-8F179E51FE45}
+		{95DFB501-471C-452B-8735-611FB38A3F2B} = {C866F018-1FB3-47B8-B802-8F179E51FE45}
+	EndGlobalSection
+EndGlobal

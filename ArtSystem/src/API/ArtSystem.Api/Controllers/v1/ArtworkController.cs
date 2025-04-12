@@ -16,8 +16,7 @@ namespace ArtSystem.Api.Controllers.v1
     public class ArtworkController : ControllerBase
     {
         readonly IMediator _mediatoR;
-        //readonly ILogger<ArtworkController> _logger;
-        readonly ILogger _logger;
+        readonly ILogger<ArtworkController> _logger;
         public ArtworkController(IMediator mediator, ILogger<ArtworkController> logger)
         {
             _mediatoR = mediator;

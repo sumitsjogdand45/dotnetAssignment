@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
     <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.3">
       <PrivateAssets>all</PrivateAssets>
@@ -25,6 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\ArtSystem.Application\ArtSystem.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\ArtSystem.Identity\ArtSystem.Identity.csproj" />
     <ProjectReference Include="..\..\Infrastructure\ArtSystem.Persistance\ArtSystem.Persistance.csproj" />
   </ItemGroup>
 

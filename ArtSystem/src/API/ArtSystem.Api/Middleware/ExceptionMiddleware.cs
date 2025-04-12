@@ -1,4 +1,5 @@
 ﻿using ArtExhibitionSystem.Application.Exceptions;
+using Microsoft.IdentityModel.SecurityTokenService;
 using System.Net;
 
 namespace ArtSystem.Api.Middleware
@@ -31,9 +32,9 @@ namespace ArtSystem.Api.Middleware
                 case NotFoundException NotFound:
                     statusCode = HttpStatusCode.NotFound;
                     break;
-                //case BadRequestException BadRequest:
-                //    statusCode = HttpStatusCode.BadRequest;
-                //    break;
+                case BadRequestException BadRequest:
+                    statusCode = HttpStatusCode.BadRequest;
+                    break;
                 default:
                     statusCode = HttpStatusCode.InternalServerError;
                     break;

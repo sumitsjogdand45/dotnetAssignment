@@ -3,6 +3,7 @@ using ArtSystem.Api.Extensions;
 using ArtSystem.Api.Middleware;
 using ArtSystem.Api.SwaggerHelper;
 using ArtSystem.Application;
+using ArtSystem.Identity;
 using ArtSystem.Persistance;
 using Asp.Versioning.ApiExplorer;
 using Serilog;
@@ -17,6 +18,7 @@ namespace ArtSystem.Api
             // Add services to the container.
             builder.Services.AddInterfaceServices(builder.Configuration);
             builder.Services.AddApplicationServices();
+            builder.Services.AddIdentityServices(builder.Configuration);
             builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
             builder.Services.AddSwaggerVersionedApiExplorer();
             builder.Services.AddSwaggerGen(options=>options.OperationFilter<SwaggerDefaultValues>());

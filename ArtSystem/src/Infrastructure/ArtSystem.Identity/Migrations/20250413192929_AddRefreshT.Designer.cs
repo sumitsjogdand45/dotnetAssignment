@@ -4,6 +4,7 @@ using ArtSystem.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ArtSystem.Identity.Migrations
 {
     [DbContext(typeof(ArtIdentityDbContext))]
-    partial class ArtIdentityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250413192929_AddRefreshT")]
+    partial class AddRefreshT
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

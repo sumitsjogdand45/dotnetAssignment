@@ -23,10 +23,12 @@
     <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="8.1.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.8.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\ArtSystem.Application\ArtSystem.Application.csproj" />
+    <ProjectReference Include="..\..\Core\ArtSystem.Domain\ArtSystem.Domain.csproj" />
     <ProjectReference Include="..\..\Infrastructure\ArtSystem.Identity\ArtSystem.Identity.csproj" />
     <ProjectReference Include="..\..\Infrastructure\ArtSystem.Persistance\ArtSystem.Persistance.csproj" />
   </ItemGroup>

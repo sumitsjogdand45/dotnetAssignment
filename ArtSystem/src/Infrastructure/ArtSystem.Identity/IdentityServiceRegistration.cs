@@ -12,7 +12,7 @@ namespace ArtSystem.Identity
         {
             services.AddDbContext<ArtIdentityDbContext>(options => {
                 options.UseSqlServer(configuration.GetConnectionString("ArtWebAPIConnString"));
-                //options.ConfigureWarnings(warnings => { warnings.Log(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning); });
+                options.ConfigureWarnings(warnings => { warnings.Log(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning); });
             });
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ArtIdentityDbContext>().AddDefaultTokenProviders();
             return services;  

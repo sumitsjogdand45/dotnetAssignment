@@ -7,5 +7,6 @@ namespace ArtSystem.Application.Contracts.Persistance.Identity
     {
         Task<AuthResponse> Login(AuthRequest authrequest);
         Task<RegistrationResponse>Register(RegistrationRequest registrationrequest);
+        Task<RefreshTokenResponse> RefreshTokenAsync(RefreshTokenRequest request);
     }
 }

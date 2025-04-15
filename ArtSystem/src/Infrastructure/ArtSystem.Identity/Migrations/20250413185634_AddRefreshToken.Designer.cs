@@ -4,6 +4,7 @@ using ArtSystem.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ArtSystem.Identity.Migrations
 {
     [DbContext(typeof(ArtIdentityDbContext))]
-    partial class ArtIdentityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250413185634_AddRefreshToken")]
+    partial class AddRefreshToken
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,7 +102,7 @@ namespace ArtSystem.Identity.Migrations
                         {
                             Id = "41776062 - 6086 - 1fbf - b923 - 2879a6680b9a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "db0fdf7c-bdf7-40cb-8437-8ed66d54fc2e",
+                            ConcurrencyStamp = "eccbe434-65c0-4a3e-ab66-94d5de471fec",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -107,9 +110,9 @@ namespace ArtSystem.Identity.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "admin@gmail.com",
-                            PasswordHash = "AQAAAAIAAYagAAAAEA0yBRP+bop7hnnHCUyc3g9mETW1z7HMJVsn3A2QVJ97iLdJRzI0f+zGzzMivYnvtQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEA+p4TsvYO2uvZYDqp6z9f3qgpsae81WETdBGH2N6MNbG66caND+zYF+qbIVSNmX5g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c1481b79-0fb5-421d-bed3-04404625818a",
+                            SecurityStamp = "c4bef8c2-12a9-4773-bdbd-8541aade150c",
                             TwoFactorEnabled = false,
                             UserName = "admin@gmail.com"
                         },
@@ -117,7 +120,7 @@ namespace ArtSystem.Identity.Migrations
                         {
                             Id = "41776062 - 6086 - 1fcf - b923 - 2879a6680b9a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "aa39d772-a8d1-4675-a363-98b8a4590df7",
+                            ConcurrencyStamp = "c6a1e2c1-b706-4a3f-89c4-6d48d1a420de",
                             Email = "sunny@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "sunny",
@@ -125,9 +128,9 @@ namespace ArtSystem.Identity.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SUNNY@GMAIL.COM",
                             NormalizedUserName = "sunny@gmail.com",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEwJFE0cUkEKGaxXFFQAYAk/5pQnSfLxZId26W6FY7h7Xr43ULgJMeHTDOzXtjhlGA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELmXia3FeSGVcswk7vsvK8mV7GNqp3qSeaQnusmkWbzxbi3yLLl7kZS+dZqO1UgSHQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a07e2274-9ee1-4284-8bd4-0d43e077bd6d",
+                            SecurityStamp = "251e1735-d518-4666-bcf9-d30cf6a2ae87",
                             TwoFactorEnabled = false,
                             UserName = "sunny@gmail.com"
                         });

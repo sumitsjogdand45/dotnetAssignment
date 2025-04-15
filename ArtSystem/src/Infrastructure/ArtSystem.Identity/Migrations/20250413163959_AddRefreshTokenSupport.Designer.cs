@@ -4,6 +4,7 @@ using ArtSystem.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ArtSystem.Identity.Migrations
 {
     [DbContext(typeof(ArtIdentityDbContext))]
-    partial class ArtIdentityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250413163959_AddRefreshTokenSupport")]
+    partial class AddRefreshTokenSupport
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,44 +96,6 @@ namespace ArtSystem.Identity.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "41776062 - 6086 - 1fbf - b923 - 2879a6680b9a",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "db0fdf7c-bdf7-40cb-8437-8ed66d54fc2e",
-                            Email = "admin@gmail.com",
-                            EmailConfirmed = false,
-                            FirstName = "Admin",
-                            LastName = "System",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@GMAIL.COM",
-                            NormalizedUserName = "admin@gmail.com",
-                            PasswordHash = "AQAAAAIAAYagAAAAEA0yBRP+bop7hnnHCUyc3g9mETW1z7HMJVsn3A2QVJ97iLdJRzI0f+zGzzMivYnvtQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "c1481b79-0fb5-421d-bed3-04404625818a",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "41776062 - 6086 - 1fcf - b923 - 2879a6680b9a",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "aa39d772-a8d1-4675-a363-98b8a4590df7",
-                            Email = "sunny@gmail.com",
-                            EmailConfirmed = false,
-                            FirstName = "sunny",
-                            LastName = "Jadhav",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "SUNNY@GMAIL.COM",
-                            NormalizedUserName = "sunny@gmail.com",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEwJFE0cUkEKGaxXFFQAYAk/5pQnSfLxZId26W6FY7h7Xr43ULgJMeHTDOzXtjhlGA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "a07e2274-9ee1-4284-8bd4-0d43e077bd6d",
-                            TwoFactorEnabled = false,
-                            UserName = "sunny@gmail.com"
-                        });
                 });
 
             modelBuilder.Entity("ArtSystem.Identity.Model.RefreshToken", b =>
@@ -187,20 +152,6 @@ namespace ArtSystem.Identity.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "41886008 - 6086 - 1fbf - b923 - 2879a6680b9a",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        },
-                        new
-                        {
-                            Id = "41776008 - 6086 - 1fbf - b923 - 2879a6680b9a",
-                            Name = "Administrator",
-                            NormalizedName = "ADMINISTRATOR"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -288,18 +239,6 @@ namespace ArtSystem.Identity.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "41776062 - 6086 - 1fbf - b923 - 2879a6680b9a",
-                            RoleId = "41776008 - 6086 - 1fbf - b923 - 2879a6680b9a"
-                        },
-                        new
-                        {
-                            UserId = "41776062 - 6086 - 1fcf - b923 - 2879a6680b9a",
-                            RoleId = "41886008 - 6086 - 1fbf - b923 - 2879a6680b9a"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
